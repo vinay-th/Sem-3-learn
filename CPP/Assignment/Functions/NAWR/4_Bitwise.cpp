@@ -8,43 +8,43 @@ public:
     cin >> a;
     return a;
   }
-  void andGate() {
+  int andGate() {
     int a = userValue();
     int b = userValue();
     int res = a & b;
-    cout << "\nAND : " << a << " & " << b << " = " << res;
+    return res;
   }
-  void orGate() {
+  int orGate() {
     int a = userValue();
     int b = userValue();
     int res = a | b;
 
-    cout << "\nOR : " << a << " | " << b << " = " << res;
+    return res;
   }
-  void xorGate() {
+  int xorGate() {
     int a = userValue();
     int b = userValue();
     int res = a ^ b;
 
-    cout << "\nXOR : " << a << " ^ " << b << " = " << res;
+    return res;
   }
-  void onesComp() {
+  int onesComp() {
     int a = userValue();
     int res = ~a;
 
-    cout << "\nThe one's complement of " << a << " is " << res;
+    return res;
   }
-  void leftShift() {
+  int leftShift() {
     int a = userValue();
     int res = a >> 2;
 
-    cout << "\nThe right shift of 2 for " << a << " is " << res;
+    return res;
   }
-  void rightShift() {
+  int rightShift() {
     int a = userValue();
     int res = a << 2;
 
-    cout << "\nThe left shift of 2 for " << a << " is " << res;
+    return res;
   }
 } bit;
 
@@ -63,22 +63,23 @@ int main() {
 
   switch (i) {
   case 1:
-    bit.andGate();
+    cout << "\nAND : " << bit.andGate();
     break;
   case 2:
-    bit.orGate();
+    cout << "\nOR : " << bit.orGate();
     break;
   case 3:
-    bit.xorGate();
+    cout << "\nXOR : " << bit.xorGate();
     break;
   case 4:
-    bit.onesComp();
+    cout << "\nThe one's complement of is " << bit.onesComp();
+
     break;
   case 5:
-    bit.leftShift();
+    cout << "\nThe right shift of 2 for is " << bit.leftShift();
     break;
   case 6:
-    bit.rightShift();
+    cout << "\nThe left shift of 2 for is " << bit.rightShift();
     break;
 
   default:

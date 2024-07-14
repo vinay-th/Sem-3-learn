@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 class Assignment {
 public:
   int userValue() {
@@ -8,47 +9,48 @@ public:
     cin >> a;
     return a;
   }
-  void assign() {
+  int assign() {
     int a = userValue();
     cout << "\nValue of a : " << a << " \nValue of b : ";
     int b = a;
     cout << "\nAfter assigning: ";
     cout << "\nValue of a : " << a << " \nValue of b : " << b;
+    return b;
   }
-  void shrtAdd() {
+  int shrtAdd() {
     int a = userValue();
-
     cout << "\nValue before: " << a;
     a += a;
     cout << "\nValue after " << a;
+    return a;
   }
-  void shrtSub() {
+  int shrtSub() {
     int a = userValue();
-
     cout << "\nValue before: " << a;
     a -= a;
     cout << "\nValue after " << a;
+    return a;
   }
-  void shrtMul() {
+  int shrtMul() {
     int a = userValue();
-
     cout << "\nValue before: " << a;
     a *= a;
     cout << "\nValue after " << a;
+    return a;
   }
-  void shrtDiv() {
+  int shrtDiv() {
     int a = userValue();
-
     cout << "\nValue before: " << a;
     a /= a;
     cout << "\nValue after " << a;
+    return a;
   }
-  void shrtMod() {
+  int shrtMod() {
     int a = userValue();
-
     cout << "\nValue before: " << a;
     a %= a;
     cout << "\nValue after " << a;
+    return a;
   }
 } assing;
 
@@ -65,31 +67,31 @@ int main() {
   cout << "\nEnter your choice: ";
   cin >> i;
 
+  int result;
   switch (i) {
   case 1:
-    assing.assign();
+    result = assing.assign();
     break;
   case 2:
-    assing.shrtAdd();
+    result = assing.shrtAdd();
     break;
   case 3:
-    assing.shrtSub();
+    result = assing.shrtSub();
     break;
   case 4:
-    assing.shrtMul();
+    result = assing.shrtMul();
     break;
   case 5:
-    assing.shrtDiv();
+    result = assing.shrtDiv();
     break;
   case 6:
-    assing.shrtMod();
+    result = assing.shrtMod();
     break;
-
   default:
     cout << "\nEnter valid option";
-    break;
+    return -1;
   }
 
-  cout << "\n";
+  cout << "\nResult: " << result << "\n";
   return 0;
 }

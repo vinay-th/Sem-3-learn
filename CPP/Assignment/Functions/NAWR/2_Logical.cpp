@@ -8,34 +8,34 @@ public:
     cin >> a;
     return a;
   }
-  void greaterAnd() {
+  int greaterAnd() {
     int a = userValue();
     int b = userValue();
 
     if (a > 5 && b > 5) {
-      cout << "\nBoth a and b are greater than 5";
+      return 1;
     } else {
-      cout << "\nBoth values are not greater than 5";
+      return 0;
     }
   }
-  void greaterOr() {
+  int greaterOr() {
     int a = userValue();
     int b = userValue();
 
     if (a > 5 || b > 5) {
-      cout << "\nEither a or b are greater than 5";
+      return 1;
     } else {
-      cout << "\nEither values are not greater than 5";
+      return 0;
     }
   }
-  void greaterNot() {
+  int greaterNot() {
     int a = userValue();
     int b = userValue();
 
     if (!(a > 5)) {
-      cout << "\na is not greater than 5";
+      return 1;
     } else {
-      cout << "\na is greater than 5";
+      return 0;
     }
   }
 } logic;
@@ -52,13 +52,27 @@ int main() {
 
   switch (i) {
   case 1:
-    logic.greaterAnd();
+    if (logic.greaterAnd()) {
+      cout << "\nBoth a and b are greater than 5";
+    } else {
+      cout << "\nBoth values are not greater than 5";
+    }
+
     break;
   case 2:
-    logic.greaterOr();
+    if (logic.greaterOr()) {
+      cout << "\nEither a or b are greater than 5";
+    } else {
+      cout << "\nEither values are not greater than 5";
+    }
     break;
   case 3:
-    logic.greaterNot();
+
+    if (logic.greaterNot()) {
+      cout << "\na is not greater than 5";
+    } else {
+      cout << "\na is greater than 5";
+    }
     break;
 
   default:

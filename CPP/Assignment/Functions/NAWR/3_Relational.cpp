@@ -8,34 +8,34 @@ public:
     cin >> a;
     return a;
   }
-  void greatCheck() {
+  int greatCheck() {
     int a = userValue();
     int b = userValue();
 
     if (a > b) {
-      cout << "\na is greater than b";
+      return 1;
     } else {
-      cout << "\na is not greater than b";
+      return 0;
     }
   }
-  void smallCheck() {
+  int smallCheck() {
     int a = userValue();
     int b = userValue();
 
     if (a < b) {
-      cout << "\na is smaller than b";
+      return 1;
     } else {
-      cout << "\na is not smaller than b";
+      return 0;
     }
   }
-  void notEqual() {
+  int notEqual() {
     int a = userValue();
     int b = userValue();
 
     if (a != b) {
-      cout << "\na is not equal than 5";
+      return 1;
     } else {
-      cout << "\na is equal than 5";
+      return 0;
     }
   }
 } rel;
@@ -52,13 +52,25 @@ int main() {
 
   switch (i) {
   case 1:
-    rel.greatCheck();
+    if (rel.greatCheck()) {
+      cout << "\na is greater than b";
+    } else {
+      cout << "\na is not greater than b";
+    }
     break;
   case 2:
-    rel.smallCheck();
+    if (rel.smallCheck()) {
+      cout << "\na is smaller than b";
+    } else {
+      cout << "\na is not smaller than b";
+    }
     break;
   case 3:
-    rel.notEqual();
+    if (rel.notEqual()) {
+      cout << "\na is not equal than 5";
+    } else {
+      cout << "\na is equal than 5";
+    }
     break;
 
   default:
